@@ -268,6 +268,96 @@ button:hover {
   cursor: pointer;
 }
 
+.container{
+  margin-top: 100px;
+  margin-bottom: 300px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr); 
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 80vh;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: px;
+  
+}
+
+
+.item {
+  position: relative;
+  overflow: hidden;
+  width: 550px;
+  height: 300px;
+  cursor: pointer;
+  right: -35rem;
+  top: 6rem;
+  border-radius: 50px;
+  box-shadow: 10px 10px 50px black;
+}
+
+
+
+
+.item:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.overlay p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.heading {
+  width: 100%;
+  position: absolute;
+  left: 750px;
+  transform: translateY(-50%);
+  text-align: left;
+  color: var(--font-main-color);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.heading h1{
+  font-size: 100px;
+  margin-bottom: 20px;
+  font-family: "CustomFont", sans-serif;
+}
 
 #check {display: none;}
   @media(max-width: 610px){

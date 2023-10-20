@@ -11,10 +11,10 @@ var icon = document.getElementById("icon");
 icon.onclick = function () {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
-    icon.src = "IMAGES/Dark.png";
+    icon.src = "images/Dark.png";
     localStorage.setItem("darkMode", "enabled");
   } else {
-    icon.src = "IMAGES/Light.png";
+    icon.src = "images/Light.png";
     localStorage.setItem("darkMode", "disabled");
   }
 };
