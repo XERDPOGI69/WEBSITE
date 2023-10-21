@@ -14,7 +14,7 @@ icon.onclick = function () {
     icon.src = "img/Dark.png";
     localStorage.setItem("darkMode", "enabled");
   } else {
-    icon.src = "img/Logo.png";
+    icon.src = "img/Light.png";
     localStorage.setItem("darkMode", "disabled");
   }
 };
