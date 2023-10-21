@@ -415,4 +415,18 @@ button:hover {
   
     #check:checked ~ .menu-overlay {
       display: block;
-    }}
+    }
+  
+    .grid {
+      grid-template-columns: 1fr; /* Stack items in a single column */
+      width: 100%; /* Full width on mobile devices */
+    }
+    .item {
+      width: 100%; /* Full width on mobile devices */
+      right: 0;
+      top: 0;
+    }
+
+  }
+
+  
