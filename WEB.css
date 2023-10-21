@@ -426,6 +426,58 @@ button:hover {
       right: 0;
       top: 0;
     }
+  
+    .logo{
+      width: 70px;
+    }
+   
+    .content {
+      width: 100%;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      top: 30%;
+      transform: translateY(-50%);
+      text-align: center;
+      color: var(--font-main-color);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .content h1 {
+      font-size: 11vw;
+      margin-top: 90px;
+      font-family: "CustomFont", sans-serif;
+      animation: contentH1 1s ease;
+    }
+    
+    .content p {
+      font-size: 10px;
+      margin: 10px auto;
+      font-weight: 100;
+      line-height: 10px;
+      font-family: "CustomFont", sans-serif;
+      animation: contentP 0.8s ease;
+      
+    }
+
+    button {
+      width: 100px;
+    
+      padding: 15px 0;
+      text-align: center;
+      margin: 20px 10px;
+      font-weight: bold;
+      border: 3px solid var(--font-main-color);
+      border-radius: 25px;
+      background: transparent;
+      color: var(--font-main-color);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      font-family: "CustomFont", sans-serif;
+      font-size: 10px;
+    }
 
   }
 
