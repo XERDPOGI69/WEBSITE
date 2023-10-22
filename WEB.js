@@ -1,25 +1,57 @@
-window.addEventListener("load", function () {
-  const isDarkMode = localStorage.getItem("darkMode");
-  if (isDarkMode === "enabled") {
-    document.body.classList.add("dark-theme");
-    document.getElementById("icon").src = "Dark.png";
+const body = document.querySelector('body');
+const btn = document.querySelector('.btn');
+const icon = document.querySelector('.btn__icon');
+const lightLogo = document.getElementById('logo-light');
+const darkLogo = document.getElementById('logo-dark');
+
+function store(value) {
+  localStorage.setItem('darkmode', value);
+}
+
+function load() {
+  const darkmode = localStorage.getItem('darkmode');
+
+  if (!darkmode) {
+    store(false);
+    icon.classList.add('fa-sun');
+  } else if (darkmode === 'true') {
+    body.classList.add('darkmode');
+    icon.classList.add('fa-moon');
+    setLogo('dark'); // Set the dark logo when dark mode is active
+  } else if (darkmode === 'false') {
+    icon.classList.add('fa-sun');
+    setLogo('light'); // Set the light logo when dark mode is not active
   }
-});
+}
 
+load();
 
-var icon = document.getElementById("icon");
-icon.onclick = function () {
-  document.body.classList.toggle("dark-theme");
-  if (document.body.classList.contains("dark-theme")) {
-    icon.src = "img/Dark.png";
-    localStorage.setItem("darkMode", "enabled");
+btn.addEventListener('click', () => {
+  body.classList.toggle('darkmode');
+  icon.classList.add('animated');
+  store(body.classList.contains('darkmode'));
+
+  if (body.classList.contains('darkmode')) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+    setLogo('dark'); // Set the dark logo when dark mode is activated
   } else {
-    icon.src = "img/Light.png";
-    localStorage.setItem("darkMode", "disabled");
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+    setLogo('light'); // Set the light logo when dark mode is not active
   }
-};
 
-const logo = document.getElementById("logo");
-logo.addEventListener("click", function () {
-  window.location.href = "WEB.html";
+  setTimeout(() => {
+    icon.classList.remove('animated');
+  }, 500);
 });
+
+function setLogo(mode) {
+  if (mode === 'dark') {
+    lightLogo.style.display = 'none';
+    darkLogo.style.display = 'block';
+  } else {
+    lightLogo.style.display = 'block';
+    darkLogo.style.display = 'none';
+  }
+}
