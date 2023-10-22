@@ -49,9 +49,27 @@ btn.addEventListener('click', () => {
 function setLogo(mode) {
   if (mode === 'dark') {
     lightLogo.style.display = 'none';
-    darkLogo.style.display = 'block';
+    darkLogo.style.display = 'flex';
   } else {
-    lightLogo.style.display = 'block';
+    lightLogo.style.display = 'flex';
     darkLogo.style.display = 'none';
   }
 }
+
+const menu = document.querySelector('.menu');
+const openMenuButton = document.querySelector('.open-menu');
+const closeMenuButton = document.querySelector('.close-menu');
+
+// Add a click event listener to the open menu button
+openMenuButton.addEventListener('click', () => {
+  menu.classList.add('opened'); // Add the "opened" class to show the menu
+  openMenuButton.style.display = 'none'; // Hide the open menu button
+  closeMenuButton.style.display = 'flex'; // Show the close menu button
+});
+
+// Add a click event listener to the close menu button
+closeMenuButton.addEventListener('click', () => {
+  menu.classList.remove('opened'); // Remove the "opened" class to hide the menu
+  closeMenuButton.style.display = 'none'; // Hide the close menu button
+  openMenuButton.style.display = 'flex'; // Show the open menu button
+});
