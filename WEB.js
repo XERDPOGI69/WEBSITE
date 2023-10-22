@@ -17,10 +17,10 @@ function load() {
   } else if (darkmode === 'true') {
     body.classList.add('darkmode');
     icon.classList.add('fa-moon');
-    setLogo('dark'); // Set the dark logo when dark mode is active
+    setLogo('dark'); 
   } else if (darkmode === 'false') {
     icon.classList.add('fa-sun');
-    setLogo('light'); // Set the light logo when dark mode is not active
+    setLogo('light'); 
   }
 }
 
@@ -34,11 +34,11 @@ btn.addEventListener('click', () => {
   if (body.classList.contains('darkmode')) {
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
-    setLogo('dark'); // Set the dark logo when dark mode is activated
+    setLogo('dark');
   } else {
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
-    setLogo('light'); // Set the light logo when dark mode is not active
+    setLogo('light'); 
   }
 
   setTimeout(() => {
@@ -60,16 +60,18 @@ const menu = document.querySelector('.menu');
 const openMenuButton = document.querySelector('.open-menu');
 const closeMenuButton = document.querySelector('.close-menu');
 
-// Add a click event listener to the open menu button
+
 openMenuButton.addEventListener('click', () => {
-  menu.classList.add('opened'); // Add the "opened" class to show the menu
-  openMenuButton.style.display = 'none'; // Hide the open menu button
-  closeMenuButton.style.display = 'flex'; // Show the close menu button
+  menu.classList.add('opened');
+  openMenuButton.style.display = 'none'; 
+  closeMenuButton.style.display = 'flex'; 
 });
 
-// Add a click event listener to the close menu button
+
 closeMenuButton.addEventListener('click', () => {
-  menu.classList.remove('opened'); // Remove the "opened" class to hide the menu
-  closeMenuButton.style.display = 'none'; // Hide the close menu button
-  openMenuButton.style.display = 'flex'; // Show the open menu button
+  menu.classList.remove('opened');
+  closeMenuButton.style.display = 'none'; 
+  openMenuButton.style.display = 'flex'; 
 });
+
+
